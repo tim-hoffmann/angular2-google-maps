@@ -10,10 +10,12 @@ export interface GoogleMap {
   getBounds(): LatLngBounds;
   getZoom(): number;
   setOptions(options: MapOptions): void;
+  fitBounds(bounds: LatLngBounds): void;
 }
 
 export interface LatLng {
-  constructor(lat: number, lng: number): void;
+  constructor(lat: number, lng: number, noWrap?: boolean): void;
+  equals(other: LatLng): boolean;
   lat(): number;
   lng(): number;
 }
